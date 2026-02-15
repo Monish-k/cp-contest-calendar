@@ -40,11 +40,18 @@ def fetch_all():
     try:
         headers={"User-Agent":"Mozilla/5.0"}
         cc=requests.get("https://www.codechef.com/api/list/contests/all",headers=headers,timeout=10).json()
-
+    
         for c in cc.get("future_contests",[]):
-            start=parser.parse(c["contest_start_date"]).astimezone(TZ)
-            code=c["contest_code"]
-            url=f"https://www.codechef.com/{code}"
+            # parse WITHOUT double timezone conversion
+            start=parser.parse(c["contest_start_date"])
+    
+            # ensure IST
+            if start.tzinfo is None:
+                start=TZ.localize(start)
+            else:
+                start=start.astimezone(TZ)
+    
+            url=f"https://www.codechef.com/{c['contest_code']}"
             out.append((c["contest_name"],start,url))
     except:
         print("CodeChef fetch failed")
@@ -55,16 +62,21 @@ def fetch_all():
         headers={"User-Agent":"Mozilla/5.0"}
         html=requests.get("https://atcoder.jp/contests/",headers=headers,timeout=10).text
         soup=BeautifulSoup(html,"html.parser")
-
+    
         table=soup.find("div",id="contest-table-upcoming")
         if table:
             rows=table.find_all("tr")[1:]
             for r in rows:
                 tds=r.find_all("td")
                 start=parser.parse(tds[0].text.strip()).astimezone(TZ)
-                name=tds[1].text.strip()
+    
+                raw_name=tds[1].text.strip()
+    
+                # remove weird symbols
+                clean_name=raw_name.replace("Ⓐ","").replace("◉","").strip()
+    
                 link="https://atcoder.jp"+tds[1].find("a")["href"]
-                out.append((name,start,link))
+                out.append((clean_name,start,link))
     except:
         print("AtCoder fetch failed")
 
