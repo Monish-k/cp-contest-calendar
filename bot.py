@@ -13,30 +13,39 @@ def fetch_all():
         for c in cf:
             if c["phase"]=="BEFORE":
                 start=datetime.datetime.fromtimestamp(c["startTimeSeconds"],pytz.utc).astimezone(TZ)
-                out.append((c["name"],start,"https://codeforces.com"))
+                url=f"https://codeforces.com/contest/{c['id']}"
+                out.append((c["name"],start,url))
     except:
         print("CF fetch failed")
 
     # ---------- LeetCode ----------
     try:
-        headers={"User-Agent":"Mozilla/5.0"}
-        r=requests.get("https://leetcode.com/contest/api/list/",headers=headers,timeout=10)
+        headers={
+            "User-Agent":"Mozilla/5.0",
+            "Accept":"application/json"
+        }
+        r=requests.get("https://leetcode.com/contest/api/list/",headers=headers,timeout=15)
         data=r.json()
 
         for c in data.get("contests",[]):
             start=datetime.datetime.fromtimestamp(c["start_time"],pytz.utc).astimezone(TZ)
             if start>datetime.datetime.now(TZ):
-                out.append((c["title"],start,"https://leetcode.com"))
+                slug=c["title_slug"]
+                url=f"https://leetcode.com/contest/{slug}"
+                out.append((c["title"],start,url))
     except:
-        print("LeetCode fetch failed")
+        print("LeetCode blocked again, will retry next run")
 
     # ---------- CodeChef ----------
     try:
         headers={"User-Agent":"Mozilla/5.0"}
         cc=requests.get("https://www.codechef.com/api/list/contests/all",headers=headers,timeout=10).json()
+
         for c in cc.get("future_contests",[]):
             start=parser.parse(c["contest_start_date"]).astimezone(TZ)
-            out.append((c["contest_name"],start,"https://codechef.com"))
+            code=c["contest_code"]
+            url=f"https://www.codechef.com/{code}"
+            out.append((c["contest_name"],start,url))
     except:
         print("CodeChef fetch failed")
 
@@ -54,7 +63,8 @@ def fetch_all():
                 tds=r.find_all("td")
                 start=parser.parse(tds[0].text.strip()).astimezone(TZ)
                 name=tds[1].text.strip()
-                out.append((name,start,"https://atcoder.jp"))
+                link="https://atcoder.jp"+tds[1].find("a")["href"]
+                out.append((name,start,link))
     except:
         print("AtCoder fetch failed")
 
