@@ -35,8 +35,8 @@ def make_ics(contests):
         end=start+datetime.timedelta(hours=2)
 
         text+="BEGIN:VEVENT\n"
-        text+=f"DTSTART:{start.strftime('%Y%m%dT%H%M%S')}\n"
-        text+=f"DTEND:{end.strftime('%Y%m%dT%H%M%S')}\n"
+        text+=f"DTSTART;TZID=Asia/Kolkata:{start.strftime('%Y%m%dT%H%M%S')}\n"
+        text+=f"DTEND;TZID=Asia/Kolkata:{end.strftime('%Y%m%dT%H%M%S')}\n"
         text+=f"SUMMARY:{name}\n"
         text+=f"DESCRIPTION:{url}\n"
         text+="END:VEVENT\n"
