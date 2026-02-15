@@ -14,12 +14,18 @@ def fetch_all():
             out.append((c["name"],start,"https://codeforces.com"))
 
     # LeetCode
-    lc=requests.get("https://leetcode.com/contest/api/list/").json()["contests"]
-    for c in lc:
-        start=datetime.datetime.fromtimestamp(c["start_time"],pytz.utc).astimezone(TZ)
-        if start>datetime.datetime.now(TZ):
-            out.append((c["title"],start,"https://leetcode.com"))
-
+    # LeetCode (safe fetch)
+    try:
+        headers={"User-Agent":"Mozilla/5.0"}
+        r=requests.get("https://leetcode.com/contest/api/list/",headers=headers,timeout=10)
+        data=r.json()
+    
+        for c in data.get("contests",[]):
+            start=datetime.datetime.fromtimestamp(c["start_time"],pytz.utc).astimezone(TZ)
+            if start>datetime.datetime.now(TZ):
+                out.append((c["title"],start,"https://leetcode.com"))
+    except:
+        print("LeetCode fetch failed, skipping")
     # CodeChef
     cc=requests.get("https://www.codechef.com/api/list/contests/all").json()
     for c in cc.get("future_contests",[]):
