@@ -122,4 +122,12 @@ DTEND;TZID=Asia/Kolkata:20260307T193000
 SUMMARY:AtCoder Beginner Contest 448
 DESCRIPTION:https://atcoder.jp/contests/abc448
 END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260314T113000
+DTEND;TZID=Asia/Kolkata:20260314T133000
+SUMMARY:Ⓗ
+
+UNIQUE VISION Programming Contest 2026 Spring (AtCoder Heuristic Contest 062)
+DESCRIPTION:https://atcoder.jp/contests/ahc062
+END:VEVENT
 END:VCALENDAR
