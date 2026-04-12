@@ -55,12 +55,6 @@ SUMMARY:Starters 236
 DESCRIPTION:https://www.codechef.com/START236
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;TZID=Asia/Kolkata:20260411T173000
-DTEND;TZID=Asia/Kolkata:20260411T193000
-SUMMARY:AtCoder Beginner Contest 453
-DESCRIPTION:https://atcoder.jp/contests/abc453
-END:VEVENT
-BEGIN:VEVENT
 DTSTART;TZID=Asia/Kolkata:20260418T173000
 DTEND;TZID=Asia/Kolkata:20260418T193000
 SUMMARY:Keysight Technologies Programming Contest（AtCoder Beginner Contest 454）
@@ -77,6 +71,12 @@ DTSTART;TZID=Asia/Kolkata:20260426T113000
 DTEND;TZID=Asia/Kolkata:20260426T133000
 SUMMARY:Ⓗ JR WEST and ALGO ARTIS Programming Contest  (AtCoder Heuristic Contest 064)
 DESCRIPTION:https://atcoder.jp/contests/ahc064
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260503T173000
+DTEND;TZID=Asia/Kolkata:20260503T193000
+SUMMARY:AtCoder Regular Contest 218
+DESCRIPTION:https://atcoder.jp/contests/arc218
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;TZID=Asia/Kolkata:20260509T173000
