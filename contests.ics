@@ -13,6 +13,18 @@ SUMMARY:Codeforces Round (Div. 2)
 DESCRIPTION:https://codeforces.com/contest/2224
 END:VEVENT
 BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260428T200500
+DTEND;TZID=Asia/Kolkata:20260428T220500
+SUMMARY:Codeforces Round (Div. 2)
+DESCRIPTION:https://codeforces.com/contest/2226
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260425T200500
+DTEND;TZID=Asia/Kolkata:20260425T220500
+SUMMARY:Codeforces Round (Div. 1 + Div. 2)
+DESCRIPTION:https://codeforces.com/contest/2222
+END:VEVENT
+BEGIN:VEVENT
 DTSTART;TZID=Asia/Kolkata:20260423T200500
 DTEND;TZID=Asia/Kolkata:20260423T220500
 SUMMARY:Codeforces Round (Div. 2)
