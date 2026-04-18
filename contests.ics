@@ -37,12 +37,6 @@ SUMMARY:Educational Codeforces Round 189 (Rated for Div. 2)
 DESCRIPTION:https://codeforces.com/contest/2225
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;TZID=Asia/Kolkata:20260418T000000
-DTEND;TZID=Asia/Kolkata:20260418T020000
-SUMMARY:Weekend Dev Challenge 46: Cybersecurity
-DESCRIPTION:https://www.codechef.com/DEVWEEKEND46
-END:VEVENT
-BEGIN:VEVENT
 DTSTART;TZID=Asia/Kolkata:20260420T180000
 DTEND;TZID=Asia/Kolkata:20260420T200000
 SUMMARY:Monday Munch - DSA Challenge 34
@@ -107,5 +101,17 @@ DTSTART;TZID=Asia/Kolkata:20260613T173000
 DTEND;TZID=Asia/Kolkata:20260613T193000
 SUMMARY:CodeQUEEN 2026 -qual- (AtCoder Beginner Contest 462)
 DESCRIPTION:https://atcoder.jp/contests/abc462
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260614T173000
+DTEND;TZID=Asia/Kolkata:20260614T193000
+SUMMARY:AtCoder Regular Contest 222
+DESCRIPTION:https://atcoder.jp/contests/arc222
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260627T173000
+DTEND;TZID=Asia/Kolkata:20260627T193000
+SUMMARY:第七回日本最強プログラマー学生選手権～Advance～ -予選- （AtCoder Beginner Contest 464）
+DESCRIPTION:https://atcoder.jp/contests/abc464
 END:VEVENT
 END:VCALENDAR
