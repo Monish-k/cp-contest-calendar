@@ -31,6 +31,12 @@ SUMMARY:Spectral::Cup 2026 Round 1 (Codeforces Round 1094, Div. 1 + Div. 2)
 DESCRIPTION:https://codeforces.com/contest/2222
 END:VEVENT
 BEGIN:VEVENT
+DTSTART;TZID=Asia/Kolkata:20260425T000000
+DTEND;TZID=Asia/Kolkata:20260425T020000
+SUMMARY:Weekend Dev Challenge 47: Cybersecurity
+DESCRIPTION:https://www.codechef.com/DEVWEEKEND47
+END:VEVENT
+BEGIN:VEVENT
 DTSTART;TZID=Asia/Kolkata:20260427T180000
 DTEND;TZID=Asia/Kolkata:20260427T200000
 SUMMARY:Monday Munch - DSA Challenge 35
