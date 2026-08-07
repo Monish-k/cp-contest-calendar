@@ -25,12 +25,6 @@ SUMMARY:Educational Codeforces Round 193 (Rated for Div. 2)
 DESCRIPTION:https://codeforces.com/contest/2253
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;TZID=Asia/Kolkata:20260806T200500
-DTEND;TZID=Asia/Kolkata:20260806T220500
-SUMMARY:Codeforces Round 1115 (Div. 2)
-DESCRIPTION:https://codeforces.com/contest/2252
-END:VEVENT
-BEGIN:VEVENT
 DTSTART;TZID=Asia/Kolkata:20260808T000000
 DTEND;TZID=Asia/Kolkata:20260808T020000
 SUMMARY:Placement Prep Weekends - 02
